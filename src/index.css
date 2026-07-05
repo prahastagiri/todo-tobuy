@@ -1,0 +1,390 @@
+:root {
+  --green: #16a34a;
+  --green-dark: #15803d;
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --danger: #dc2626;
+  --radius: 12px;
+  --nav-h: 60px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.app {
+  max-width: 640px;
+  margin: 0 auto;
+  min-height: 100%;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+}
+
+.app__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.app__title {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.app__main {
+  flex: 1;
+  padding: 16px;
+  padding-bottom: calc(var(--nav-h) + 24px);
+}
+
+/* Bottom navigation */
+.nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-h);
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  background: var(--card);
+  border-top: 1px solid var(--border);
+}
+
+.nav__item {
+  flex: 1;
+  border: none;
+  background: none;
+  color: var(--muted);
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  text-decoration: none;
+}
+
+.nav__item--active {
+  color: var(--green);
+  font-weight: 600;
+}
+
+.nav__icon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+/* Kartu & tombol umum (komponen dapat dipakai ulang) */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+  margin-bottom: 12px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.btn--primary {
+  background: var(--green);
+  border-color: var(--green);
+  color: #fff;
+}
+
+.btn--block {
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font: inherit;
+  background: #fff;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.center-screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px;
+  text-align: center;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.banner {
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  color: #92400e;
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+.empty {
+  text-align: center;
+  color: var(--muted);
+  padding: 40px 16px;
+}
+
+.app__header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.offline-bar {
+  background: #fef3c7;
+  color: #92400e;
+  text-align: center;
+  font-size: 13px;
+  padding: 6px 12px;
+  border-bottom: 1px solid #fde68a;
+}
+
+.chip {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.chip--ok {
+  background: #dcfce7;
+  color: var(--green-dark);
+}
+
+.chip--off {
+  background: #fee2e2;
+  color: var(--danger);
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.btn--icon {
+  padding: 8px 10px;
+  line-height: 1;
+}
+
+/* Kartu daftar yang bisa diklik (menu, daftar belanja) */
+.list-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  text-align: left;
+  gap: 12px;
+}
+
+.list-card__title {
+  font-weight: 600;
+}
+
+.list-card__right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+/* Header kelompok kategori */
+.group-header {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin: 12px 2px 6px;
+}
+
+/* Baris item */
+.item-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  margin-bottom: 8px;
+}
+
+.item-row--dim {
+  opacity: 0.55;
+}
+
+.item-row__main {
+  flex: 1;
+  min-width: 0;
+}
+
+.item-row__name {
+  font-weight: 600;
+}
+
+.item-row__meta {
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+.item-row__actions {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.item-row--tap {
+  cursor: pointer;
+  user-select: none;
+}
+
+.item-row__leading {
+  flex-shrink: 0;
+}
+
+/* Indikator centang (mode belanja / riwayat) */
+.check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.check--on {
+  background: var(--green);
+  border-color: var(--green);
+}
+
+/* Progress bar (mode belanja) */
+.progress {
+  height: 8px;
+  background: var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progress__bar {
+  height: 100%;
+  background: var(--green);
+  transition: width 0.2s ease;
+}
+
+/* Field form */
+.field {
+  display: block;
+  border: none;
+  padding: 0;
+  margin: 0 0 12px;
+}
+
+.field__label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.5);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 100;
+  padding: 0;
+}
+
+.modal {
+  background: var(--card);
+  width: 100%;
+  max-width: 640px;
+  border-radius: 16px 16px 0 0;
+  padding: 20px 16px calc(16px + env(safe-area-inset-bottom));
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal__title {
+  margin: 0 0 16px;
+  font-size: 18px;
+}
+
+@media (min-width: 640px) {
+  .modal-overlay {
+    align-items: center;
+  }
+  .modal {
+    border-radius: 16px;
+  }
+}
