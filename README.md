@@ -1,5 +1,7 @@
 # 🛒 Todo Belanja
 
+🔗 **Live:** <https://tolongbelanja.prahastagiri.com>
+
 Aplikasi **todo belanja pribadi** berbasis web (**PWA**) untuk berbelanja dari
 daftar yang diberikan orang tua. Bisa dibuka di HP maupun laptop, **tetap jalan
 saat offline** (sinyal pasar sering buruk), dan menyimpan **riwayat masakan**
