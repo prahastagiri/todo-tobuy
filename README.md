@@ -90,6 +90,32 @@ npm run preview    # pratinjau hasil build
 
 ---
 
+## ☁️ Deploy ke Vercel
+
+Proyek sudah menyertakan [`vercel.json`](vercel.json) (framework Vite +
+rewrite SPA agar deep-link seperti `/menu/:id` dan `/import` tidak 404).
+
+1. Buka [vercel.com](https://vercel.com) → **Add New → Project** → import repo
+   GitHub `todo-tobuy`. Framework terdeteksi otomatis (Vite).
+2. **Environment Variables** — tambahkan (nilai dari `.env.local`):
+   - `VITE_SUPABASE_URL`
+   - `VITE_SUPABASE_ANON_KEY`
+   > ⚠️ Vite menyisipkan env saat **build**. Kalau menambah/mengubah env
+   > setelah deploy pertama, jalankan **Redeploy**.
+3. **Deploy** → kamu dapat URL, mis. `https://todo-tobuy.vercel.app`.
+4. **Perbarui Supabase** agar login bekerja di domain produksi —
+   Authentication → **URL Configuration**:
+   - Site URL: `https://<app>.vercel.app`
+   - Redirect URLs: tambah `https://<app>.vercel.app/**` (biarkan
+     `http://localhost:3220/**` untuk dev).
+5. **Jika pakai login Google** — di Google Cloud Console tambahkan
+   `https://<app>.vercel.app` ke *Authorized JavaScript origins* (callback
+   Supabase tetap sama).
+
+Push berikutnya ke `main` akan otomatis men-deploy ulang.
+
+---
+
 ## 📁 Struktur proyek
 
 ```

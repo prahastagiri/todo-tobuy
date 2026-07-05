@@ -6,6 +6,26 @@ keputusan, dan alasan singkat. Baca file ini sebelum mengubah desain.
 
 ---
 
+## 2026-07-06 — Persiapan deployment (Vercel)
+
+- **Target hosting: Vercel** (auto-deploy dari GitHub). `vercel.json`:
+  framework Vite, `buildCommand`/`outputDirectory` eksplisit, dan **rewrite
+  SPA** `/(.*) → /index.html` agar deep-link (mis. `/menu/:id`, `/import`)
+  tidak 404. File statis (sw.js, assets, ikon) tetap dilayani langsung
+  karena filesystem diprioritaskan sebelum rewrite.
+
+- **Env di-build-time.** `VITE_*` disisipkan saat build, jadi env var harus
+  diset di Vercel sebelum build; perubahan env perlu redeploy.
+
+- **Pasca-deploy:** wajib menambah domain produksi ke Supabase Auth (Site
+  URL + Redirect URLs) dan ke Google OAuth origins bila dipakai. Langkah
+  lengkap ada di README bagian "Deploy ke Vercel".
+
+- Build produksi diverifikasi lokal (`npm run build`): 99 modul, service
+  worker + manifest PWA ter-generate.
+
+---
+
 ## 2026-07-05 — Sinkronisasi offline (local-first) selesai
 
 Mencabut penundaan di entri "Profil/Setelan". Aplikasi kini bisa BACA & TULIS
