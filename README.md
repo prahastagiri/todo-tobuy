@@ -1,6 +1,10 @@
 # 🛒 Todo Belanja
 
-🔗 **Live:** <https://tolongbelanja.prahastagiri.com>
+[![Live](https://img.shields.io/badge/live-tolongbelanja.prahastagiri.com-16a34a?style=flat-square)](https://tolongbelanja.prahastagiri.com)
+![React](https://img.shields.io/badge/React-18-61dafb?style=flat-square&logo=react&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-5-646cff?style=flat-square&logo=vite&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-3ecf8e?style=flat-square&logo=supabase&logoColor=white)
+![PWA](https://img.shields.io/badge/PWA-offline--first-5a0fc8?style=flat-square)
 
 Aplikasi **todo belanja pribadi** berbasis web (**PWA**) untuk berbelanja dari
 daftar yang diberikan orang tua. Bisa dibuka di HP maupun laptop, **tetap jalan
@@ -185,7 +189,6 @@ Detail lengkap ada di [`docs/`](docs/). Sebelum mengubah desain, baca
   menimpa `updated_at`). Cukup untuk pemakaian pribadi (1 pengguna, HP+laptop);
   belum ada resolusi konflik granular.
 - **Impor menu** (`import_shared_menu`) membutuhkan koneksi online.
-- Ikon PWA masih placeholder — ganti sebelum rilis publik.
 
 ---
 
